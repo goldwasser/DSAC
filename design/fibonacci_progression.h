@@ -3,6 +3,7 @@
 
 namespace dsac::design {
 
+/// A Fibonacci progression, in which each number is the sum of the previous two numbers
 class FibonacciProgression : public Progression {
   protected:
     long prev;

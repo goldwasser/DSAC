@@ -6,6 +6,7 @@
 
 namespace dsac::design {
 
+/// A credit card that charges monthly interest and assesses fees
 class PredatoryCreditCard : public CreditCard {
   private:
     double apr;               // annual percentage rate
@@ -15,7 +16,7 @@ class PredatoryCreditCard : public CreditCard {
     PredatoryCreditCard(std::string cust, std::string bk, std::string acnt, int lim, double initial_bal, double rate)
         : CreditCard{cust, bk, acnt, lim, initial_bal}, apr{rate} {}
 
-    // A new function for assessing monthly interest charges
+    /// Performs end-of-month processing, including compiling interest on an outstanding balance
     void process_month() {
         if (balance > 0) {               // only charge interest on a positive balance
             double monthly_factor = pow(1 + apr, 1.0/12);      // compute monthly rate
@@ -23,7 +24,9 @@ class PredatoryCreditCard : public CreditCard {
         }
     }
     
-    // Overriding the charge function defined in the superclass
+    /// Attempts to charge the give amount, assessing a $5 penalty if the charge fails
+    /// @param price the amount to be charged
+    /// @return a boolean which is true if the charge was successful, and false if the charge failed
     bool charge(double price) {
         bool is_success{CreditCard::charge(price)};            // call inherited version
         if (!is_success)

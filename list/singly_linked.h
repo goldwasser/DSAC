@@ -169,7 +169,7 @@ class SinglyLinkedList {
   private:
     // presumes valid empty list when called
     void clone(const SinglyLinkedList& other) {
-        for (auto e : other) push_back(e);        // add each element of other to this list
+        for (T e : other) push_back(e);        // add each element of other to this list
     }
 
   public:

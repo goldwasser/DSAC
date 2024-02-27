@@ -3,6 +3,7 @@
 
 namespace dsac::design {
 
+/// An arithmetic progression, in which each number is the previous number plus some fixed increment
 class ArithmeticProgression : public Progression {
   protected:
     long increment;

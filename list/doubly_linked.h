@@ -195,7 +195,7 @@ class DoublyLinkedList {
   private:
     // presumes valid empty list when called
     void clone(const DoublyLinkedList& other) {
-        for (auto e : other)
+        for (T e : other)
             push_back(e);
     }
 

@@ -3,6 +3,7 @@
 
 namespace dsac::design {
 
+/// A counter that maintains a single integer value
 class Counter {
   private:
     int value{0};       // a simple integer instance variable

@@ -3,6 +3,7 @@
 
 namespace dsac::design {
 
+/// A base class generating a progression of numbers
 class Progression {
   protected:
     long current;

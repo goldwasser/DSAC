@@ -4,6 +4,7 @@
 
 namespace dsac::design {
 
+/// A customer credit card
 class CreditCard {
   private:
     std::string customer;     // name of the customer (e.g., "John Bowman")
@@ -21,19 +22,24 @@ class CreditCard {
 
     // ------------- Accessors -------------
 
-    /// return the customer's name
+    /// Returns the customer's name
+    /// @return a string representing the customer's name
     std::string get_customer() const { return customer; }
 
-    /// return the bank's name
+    /// Returns the bank's name
+    /// @return a string representing the credit card's bank
     std::string get_bank() const { return bank; }
 
-    /// return the account number as a string
+    /// Returns the account number as a string
+    /// @return a string representing the account number
     std::string get_account() const { return account; }
 
-    /// return the credit limit (measured in dollars)
+    /// Returns the credit limit (measured in dollars)
+    /// @return an integer representing the credit limit, it dollars
     int get_limit() const { return limit; }
 
-    /// return the current balance (measured in dollars)
+    /// Returns the current balance (measured in dollars)
+    /// @return a floating-point representation of the current balance, in dollars
     double get_balance() const { return balance; }
 
     // ------------- Mutators -------------
@@ -50,10 +56,15 @@ class CreditCard {
     }
 
     /// Processes customer payment to reduce the balance
+    /// @param amount the amount to pay down the balance
     void make_payment(double amount) { balance -= amount; }
 
     // ------------- Overloaded output operator (as friend) -------------
 
+    /// Displays the credit card to an output stream
+    /// @param out the output stream
+    /// @param c the credit card
+    /// @return the resulting output stream
     friend std::ostream& operator<<(std::ostream& out, const CreditCard& c) {
         out << "Customer = " << c.customer << std::endl;
         out << "Bank = " << c.bank << std::endl;

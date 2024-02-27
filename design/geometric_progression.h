@@ -3,6 +3,7 @@
 
 namespace dsac::design {
 
+/// A geometric progression, in which each number is the previous number plus times some fixed multiplier
 class GeometricProgression : public Progression {
   protected:
     long base;
